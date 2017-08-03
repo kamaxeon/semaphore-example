@@ -1,0 +1,13 @@
+---
+- hosts: all
+  tasks:
+  - name: Ensure install httpd server
+    package: 
+      name: apache2
+      state: present
+
+  - name: Ensure httpd is running
+    service:
+      name: apache2
+      enabled: yes
+      state: started
